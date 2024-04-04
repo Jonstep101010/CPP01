@@ -1,0 +1,10 @@
+build/
+.cache
+cmake
+.clang-tidy
+.DS_Store
+.clang-format
+*.o
+*.out
+*.log
+BraiiiiiiinnnzzzZ
