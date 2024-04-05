@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Weapon.hpp"
-#include <iostream>
 #include <string>
 
 class HumanB
@@ -10,10 +9,10 @@ class HumanB
 	public:
 		HumanB(std::string name);
 		~HumanB();
-		void setWeapon(Weapon type_toset);
+		void setWeapon(Weapon& new_weapon);
 		void attack();
 
 	private:
-		Weapon      weapon_type;
+		Weapon*     weapon;
 		std::string name;
 };

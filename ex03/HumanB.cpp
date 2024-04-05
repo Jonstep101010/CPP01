@@ -1,15 +1,20 @@
 #include "HumanB.hpp"
+#include <iostream>
 
 HumanB::HumanB(std::string name)
-	: name(name) {}
+	: weapon(NULL), name(name) {}
 
 HumanB::~HumanB() {}
 
-void HumanB::setWeapon(Weapon weapon_type_toset) {
-	this->weapon_type = weapon_type_toset;
+void HumanB::setWeapon(Weapon& new_weapon) {
+	this->weapon = &new_weapon;
 }
 
 void HumanB::attack() {
-	std::cout << name << " attacks with their "
-			  << weapon_type.getType() << "\n";
+	if (weapon != 0) {
+		std::cout << name << " attacks with their "
+				  << weapon->getType() << "\n";
+	} else {
+		std::cout << name << " (unarmed) has been injured!\n";
+	}
 }
