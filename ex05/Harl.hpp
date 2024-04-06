@@ -13,3 +13,5 @@ private:
 	void warning();
 	void error();
 };
+
+typedef void (Harl::*HarlFunc)();
