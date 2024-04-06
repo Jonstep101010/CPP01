@@ -1,7 +1,16 @@
 #include "Harl.hpp"
 #include <iostream>
 
-Harl::Harl() {
+Harl::Harl() : funcs() {
+	funcs[0]  = &Harl::debug;
+	funcs[1]  = &Harl::info;
+	funcs[2]  = &Harl::warning;
+	funcs[3]  = &Harl::error;
+
+	levels[0] = "DEBUG";
+	levels[1] = "INFO";
+	levels[2] = "WARNING";
+	levels[3] = "ERROR";
 }
 
 Harl::~Harl() {
@@ -37,15 +46,10 @@ void Harl::error() {
 }
 
 void Harl::complain(std::string level) {
-	HarlFunc    funcs[5] = {&Harl::debug, &Harl::info,
-							&Harl::warning, &Harl::error, NULL};
-	std::string levels[5]
-		= {"DEBUG", "INFO", "WARNING", "ERROR"};
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i <= LEVELS; i++) {
 		if (levels[i] == level) {
-			(this->*funcs[i])();
-			return;
+			return ((this->*funcs[i])());
 		}
 	}
-	std::cout << "Invalid level" << std::endl;
+	std::cout << "Invalid level\n";
 }
