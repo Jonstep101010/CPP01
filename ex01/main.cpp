@@ -5,8 +5,9 @@
 int main() {
 	Zombie* horde = zombieHorde(NUM_ZOMBIES, "dwarf");
 
-	if (!horde)
+	if (horde == 0) {
 		return (1);
+	}
 	for (int i = 0; i < NUM_ZOMBIES; i++) {
 		horde[i].announce();
 	}

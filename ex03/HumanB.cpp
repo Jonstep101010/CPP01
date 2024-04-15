@@ -15,6 +15,6 @@ void HumanB::attack() {
 		std::cout << name << " attacks with their "
 				  << weapon->getType() << "\n";
 	} else {
-		std::cout << name << " (unarmed) has been injured!\n";
+		std::cout << name << " attacks with bare fist. He suffers a broken hand!\n";
 	}
 }
