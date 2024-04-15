@@ -1,7 +1,8 @@
 #include "Harl.hpp"
 #include <iostream>
 
-Harl::Harl() : funcs() {
+Harl::Harl()
+	: funcs() {
 	funcs[0]  = &Harl::debug;
 	funcs[1]  = &Harl::info;
 	funcs[2]  = &Harl::warning;
@@ -13,8 +14,7 @@ Harl::Harl() : funcs() {
 	levels[3] = "ERROR";
 }
 
-Harl::~Harl() {
-}
+Harl::~Harl() {}
 
 void Harl::debug() {
 	std::cout << "DEBUG" << std::endl;

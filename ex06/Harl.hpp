@@ -1,7 +1,7 @@
 #pragma once
 
-# include <string>
-# define LEVELS 4
+#include <string>
+#define LEVELS 4
 
 class Harl {
 public:
@@ -17,6 +17,6 @@ private:
 	void filter(int filterlevel);
 
 	typedef void (Harl::*HarlFunc)();
-	HarlFunc    funcs[LEVELS];
-	std::string levels[LEVELS];
+	HarlFunc     funcs[LEVELS];
+	std::string  levels[LEVELS];
 };

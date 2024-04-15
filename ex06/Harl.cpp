@@ -1,7 +1,8 @@
 #include "Harl.hpp"
 #include <iostream>
 
-Harl::Harl() : funcs() {
+Harl::Harl()
+	: funcs() {
 	funcs[0]  = &Harl::debug;
 	funcs[1]  = &Harl::info;
 	funcs[2]  = &Harl::warning;
@@ -13,8 +14,7 @@ Harl::Harl() : funcs() {
 	levels[3] = "ERROR";
 }
 
-Harl::~Harl() {
-}
+Harl::~Harl() {}
 
 void Harl::debug() {
 	std::cout << "[ DEBUG ]\n"
@@ -47,18 +47,19 @@ void Harl::error() {
 
 void Harl::filter(int filterlevel) {
 	switch (filterlevel) {
-		case 0:
-			(this->*funcs[0])();
-		case 1:
-			(this->*funcs[1])();
-		case 2:
-			(this->*funcs[2])();
-		case 3:
-			(this->*funcs[3])();
-			return;
-		default:
-			std::cout << "[ Probably complaining about insignificant "
-			"problems ]\n";
+	case 0:
+		(this->*funcs[0])();
+	case 1:
+		(this->*funcs[1])();
+	case 2:
+		(this->*funcs[2])();
+	case 3:
+		(this->*funcs[3])();
+		return;
+	default:
+		std::cout
+			<< "[ Probably complaining about insignificant "
+			   "problems ]\n";
 	}
 }
 
@@ -66,7 +67,7 @@ void Harl::complain(std::string level) {
 	int i = 0;
 	for (; i <= LEVELS; i++) {
 		if (levels[i] == level) {
-			break ;
+			break;
 		}
 	}
 	Harl::filter(i);

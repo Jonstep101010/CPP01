@@ -4,11 +4,11 @@
 u_short sed_is_for_losers(const char** av);
 
 /**
- * @param av: const char** av {filename, string1, string2}
+ * @param argv: const char** argv {filename, string1, string2}
  */
-int main(int ac, const char** av) {
-	if (ac == 4 && *av[1] && *av[2] && *av[3]) {
-		return (sed_is_for_losers(av));
+int main(int argc, const char** argv) {
+	if (argc == 4 && *argv[1] && *argv[2] && *argv[3]) {
+		return (sed_is_for_losers(argv));
 	}
 	std::cout << "Input must be: filename "
 				 "string1 string2. Try again!\n";

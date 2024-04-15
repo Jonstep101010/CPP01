@@ -1,10 +1,10 @@
 #include "Harl.hpp"
 
 /**
- * @param av: const char** av {filename, string1, string2}
+ * @param argv: const char** av {filename, string1, string2}
  */
 int main() {
-	Harl	harl;
+	Harl harl;
 
 	harl.complain("DEBUG");
 	harl.complain("INFO");

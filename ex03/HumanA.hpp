@@ -1,17 +1,16 @@
 #pragma once
 
 #include "Weapon.hpp"
-# include <string>
+#include <string>
 
-class HumanA
-{
+class HumanA {
 
-	public:
-		HumanA(std::string name, Weapon& weapon);
-		~HumanA();
-		void attack();
+public:
+	HumanA(std::string name, Weapon& weapon);
+	~HumanA();
+	void attack();
 
-	private:
-		Weapon*     weapon;
-		std::string name;
+private:
+	Weapon*     weapon;
+	std::string name;
 };

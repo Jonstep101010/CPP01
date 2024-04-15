@@ -25,20 +25,20 @@ static void replace_substrings(std::ifstream&     infile,
 	}
 }
 
-u_short sed_is_for_losers(const char** av) {
-	std::ifstream infile(av[1]);
+u_short sed_is_for_losers(const char** argv) {
+	std::ifstream infile(argv[1]);
 	if (!infile.is_open()) {
 		std::cout << "Error: could not open infile\n";
 		return (1);
 	}
-	std::string   new_name = std::string(av[1]) + ".replace";
+	std::string   new_name = std::string(argv[1]) + ".replace";
 	std::ofstream outfile(new_name.c_str(), std::ios::trunc);
 	if (!outfile.is_open()) {
 		std::cout << "Error: could not open outfile\n";
 		return (1);
 	}
 
-	replace_substrings(infile, outfile, av[2], av[3]);
+	replace_substrings(infile, outfile, argv[2], argv[3]);
 	infile.close();
 	outfile.close();
 	return (0);
