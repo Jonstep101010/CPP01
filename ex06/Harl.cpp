@@ -45,14 +45,18 @@ void Harl::error() {
 			  << " I want to speak to the manager now.\n";
 }
 
+// fall through is intentional: prevent compiler error
 void Harl::filter(int filterlevel) {
 	switch (filterlevel) {
 	case 0:
 		(this->*funcs[0])();
+		// fall through
 	case 1:
 		(this->*funcs[1])();
+		// fall through
 	case 2:
 		(this->*funcs[2])();
+		// fall through
 	case 3:
 		(this->*funcs[3])();
 		return;
